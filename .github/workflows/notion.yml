@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Update file
-      uses: actions/notion-to-file-github-pr@v1.1
+      uses: gunta/notion-to-json-yml-action@1.02
       with:
         notion-token: ${{ secrets.NOTION_TOKEN }}
         notion-db: ${{ secrets.NOTION_DATABASE }}
