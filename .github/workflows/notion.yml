@@ -31,3 +31,17 @@ jobs:
         title: 'Update from Notion'
         body: 'Automated changes by GitHub action'
         labels: 'automated-notion'
+    - name: Generate posts
+      uses: bndynet/github-action-notion@v1
+      with:
+        notion-token: ${{ secrets.NOTION_TOKEN}}
+        root-page-id: ${{ secrets.NOTION_DATABASE }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        commit-message: 'Update from Notion posts'
+        branch: 'automation/update-from-notion'
+        delete-branch: true
+        title: 'Update from Notion posts'
+        body: 'Automated changes by GitHub action posts'
+        labels: 'notion-posts'
