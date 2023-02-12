@@ -35,7 +35,7 @@ jobs:
       uses: bndynet/github-action-notion@v1
       with:
         notion-token: ${{ secrets.NOTION_TOKEN}}
-        root-page-id: ${{ secrets.NOTION_DATABASE }}
+        notion-db: ${{ secrets.NOTION_DATABASE }}
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
